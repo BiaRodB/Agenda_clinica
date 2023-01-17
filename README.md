@@ -43,7 +43,7 @@ Configurando o settings.py:
 INSTALLED_APPS = [
     ...
     'rest_framework',
-    'agenda',
+    'nome_do_app',
 ]
 ```
 Ainda no settings.py mudaremos o idioma para português:
@@ -56,7 +56,7 @@ No arquivo clientes/models.py definimos todos os objetos chamados Modelos, tem q
 from django.db import models
 from datetime import date, time
 from django.utils import timezone
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError # Esse importe foi usado para validar a data, ele não deixa que a data seja adicionada ao banco de forma errada.
 
 class Especialidade(models.Model): #Especialidade do medico: ortopedia, psiquiatria...
     especialidade = models.CharField(max_length=100)
